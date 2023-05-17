@@ -5,7 +5,9 @@ Microplastic project
 Project Members
 
 Derik Vo
+
 Veda Patel
+
 Yasser Siddiqui
 
 
@@ -21,29 +23,34 @@ Our data is sourced from ['The national Centers for Environmental Information')]
 
 |Column|Description|Missing Values|
 |-----|-----|----|
-|FID|||
-|Date|Specific date record was collected format is month/day/year||
-|Latitude|||
-|Longitude|||
-|Oceans|The specific ocean the record was collected from||
-|Regions|The specific region (major sea) within an ocean||
-|Sub Regions|The specific subregion of a major sea or ocean||
-|Microplastics Measurement|micro plastic concentration measured in m^3||
+|FID|The identifier for the record|0|
+|Date|Specific date record was collected format is month/day/year|0|
+|Latitude|The north or south angular distance from of the earths equator |0|
+|Longitude|The west or west angular distance from of the earths meridian|0|
+|Oceans|The specific ocean the record was collected from|0|
+|Regions|The specific region (major sea) within an ocean|10052|
+|Sub Regions|The specific subregion of a major sea or ocean|12932|
+|Microplastics Measurement|micro plastic concentration measured in m^3|0|
 |Unit|||
-|Density Class Range|||
-|Density Class|||
-|Sampling Method|The specific method used to [collect samples](# sampling method)||
-|Short Reference|||
-|Long Reference|||
-|DOI|||
-|Organization|Specific organization that collected the sample||
-|Keywords|||
-|NCEI Accession Number|||
-|NCEI Accession Link|||
+|Density Class Range||0|
+|Density Class||0|
+|Sampling Method|The specific method used to [collect samples](# sampling method) (will need to create a header for sampling methods)|0|
+|Short Reference|Short reference ID|0|
+|Long Reference|Long reference ID|0|
+|DOI|Digital object identifier||
+|Organization|Specific organization that collected the sample|0|
+|Keywords|Description of the data|87|
+|NCEI Accession Number||0|
+|NCEI Accession Link||0|
 
 ## Hypothesis
 
 ## EDA
+
+During our Exploratory data analysis project we found that Sub Regions and Regions had the highest number of missing values. Upon further inspection we identified this was due to not being entered by the initial researchers. So we used an API to use the longitudinal and latitudinal to find the regions and sub regions using Geopy.
+
+When looking at measurements we found a huge range of values. When looking at the quartile ranges we identified the 75% was under 1, but had a max value of over 60,000. We originally thought these outliers were due to a mistake, but when we group them by sampling method we noticed the ranges differed depending on the sampling method. However, there are still some outliers that will need to be investigated.
+
 
 ## Modeling
 
